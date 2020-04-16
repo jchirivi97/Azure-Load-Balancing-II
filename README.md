@@ -42,15 +42,57 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe.
 
+El comando utilizado es : newman run Test.postman_collection.json -n 10
+
 6. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?.
+
+![Captura](https://user-images.githubusercontent.com/48265107/79472751-d829e600-7fc9-11ea-94ee-6cdf0e5ac387.JPG)
+
 
 **Preguntas**
 
 * ¿Qué es un Azure Function?
+
+- Es una solución para poder ejecutar fragmentos de codigo o funcionces en la nube  
+
 * ¿Qué es serverless?
+- Es un modelo de ejecución de computación en la nube en el que el proveedor de la nube ejecuta el servidor y administra dinámicamente la asignación de recursos de la máquina.
+
 * ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
+
+- intervalo de tiempo en el que un programa de computadora se ejecuta en un sistema operativo, 
+- Al seleccionar el plan Consumption y la versión de runtime 2, implica que su "timeout duration" es de 5 minutos.
+
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
+
+-  contiene todos sus objetos de datos de Azure Storage: blobs, archivos, colas, tablas y discos. La cuenta de almacenamiento proporciona un espacio de nombres único para sus datos de Azure Storage al que se puede acceder desde cualquier lugar del mundo a través de HTTP o HTTPS. 
+
 * ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
+
+Azure Functions tiene tres planes de servicio diferentes: Plan de consumo, plan Premium y plan Dedicado (App Service). 
+
+![Captura](https://user-images.githubusercontent.com/48265107/79475520-6358ab00-7fcd-11ea-9b1c-4a30b32e945b.JPG)
+
+
 * ¿Por qué la memoization falla o no funciona de forma correcta?
+
+- tiene un timeout de 5 minutos en donde llega a un limite de espera y esto hace que pasa a la siguiente petición quedando como si fuera la primera siendo asi que la memorización usada anteriormente queda vacia
+
 * ¿Cómo funciona el sistema de facturación de las Function App?
+
+- El costo de ejecución de una única ejecución de función se mide en GB por segundo. El costo de ejecución se calcula mediante la combinación del uso de memoria con el tiempo de ejecución. 
+
+-  Por ejemplo, suponga que la función ha consumido 0,5 GB durante tres segundos. Después, el costo de ejecución es 0.5GB * 3s = 1.5 GB-seconds.
+
 * Informe
+
+- Prueba de carga sin memorización
+
+![Captura](https://user-images.githubusercontent.com/48265107/79476540-baab4b00-7fce-11ea-8b1e-f0fa8f4d16b1.JPG)
+
+se observa que sin memorización los tiempos de cada una de ellas es similar, no se utilizan resultados anteriores sino que se hace desde el inicio. 
+
+![Captura](https://user-images.githubusercontent.com/48265107/79476698-ef1f0700-7fce-11ea-87be-aa78252d21a6.JPG)
+
+![Captura](https://user-images.githubusercontent.com/48265107/79476784-0a8a1200-7fcf-11ea-90b9-41c7ec294e3f.JPG)
+
